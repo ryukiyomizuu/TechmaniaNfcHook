@@ -43,22 +43,49 @@ target_link_libraries(TechmaniaNfcHook PRIVATE
     setupapi
 )
 
+add_library(techmania_nfc_probe_support STATIC
+    tools/probe_formatter.cpp
+)
+
+target_include_directories(techmania_nfc_probe_support PUBLIC
+    include
+    tools
+)
+
+target_link_libraries(techmania_nfc_probe_support PUBLIC bcrypt)
+
+add_executable(TechmaniaNfcProbe
+    tools/nfc_hook_probe.cpp
+)
+
+target_link_libraries(TechmaniaNfcProbe PRIVATE
+    TechmaniaNfcHook
+    techmania_nfc_probe_support
+)
+
 add_executable(techmania_nfc_tests
     tests/test_main.cpp
     tests/test_card_report_decoder.cpp
     tests/test_card_state_machine.cpp
     tests/test_event_queue.cpp
     tests/test_hook_runtime.cpp
+    tests/test_probe_format.cpp
 )
 
 target_include_directories(techmania_nfc_tests PRIVATE
     tests
+    tools
 )
 
-target_link_libraries(techmania_nfc_tests PRIVATE techmania_nfc_core)
+target_link_libraries(techmania_nfc_tests PRIVATE
+    techmania_nfc_core
+    techmania_nfc_probe_support
+)
 
 if(MSVC)
-    foreach(target techmania_nfc_core TechmaniaNfcHook techmania_nfc_tests)
+    foreach(target techmania_nfc_core TechmaniaNfcHook
+                   techmania_nfc_probe_support TechmaniaNfcProbe
+                   techmania_nfc_tests)
         target_compile_options(${target} PRIVATE /W4 /WX /permissive-)
     endforeach()
 endif()
