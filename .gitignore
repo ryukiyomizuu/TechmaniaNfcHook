@@ -4,5 +4,6 @@ build-*/
 artifacts/
 .vs/
 out/
+*.pdb
 *.user
 *.suo
