@@ -9,8 +9,12 @@ include(CTest)
 
 add_executable(techmania_nfc_tests
     src/card_report_decoder.cpp
+    src/card_state_machine.cpp
+    src/event_queue.cpp
     tests/test_main.cpp
     tests/test_card_report_decoder.cpp
+    tests/test_card_state_machine.cpp
+    tests/test_event_queue.cpp
 )
 
 target_include_directories(techmania_nfc_tests PRIVATE
