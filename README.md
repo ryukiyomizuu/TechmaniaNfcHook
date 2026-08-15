@@ -49,5 +49,16 @@ remain available.
 - [Theme hooks](docs/THEME-HOOKS.md)
 - [Troubleshooting](docs/TROUBLESHOOTING.md)
 
-Author: Ryuki (`107751055+ryukiyomizuu@users.noreply.github.com`). See [AUTHORS.md](AUTHORS.md).
+## Upstream hardware references
+
+This bridge was developed against the public AIC Pico CardIO behavior and
+documentation. The upstream hardware, firmware, and configuration utility are
+maintained separately by their original author:
+
+- [whowechina/aic_pico](https://github.com/whowechina/aic_pico)
+- [AIC Pico Configurator](https://whowechina.github.io/aic_pico/Configurator/index.html)
+
+No AIC Pico source code or firmware is vendored in this repository.
+
+Author: [Ryuki](https://github.com/ryukiyomizuu). See [AUTHORS.md](AUTHORS.md).
 

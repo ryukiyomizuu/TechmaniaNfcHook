@@ -1,4 +1,8 @@
 # Author
 
-Ryuki <107751055+ryukiyomizuu@users.noreply.github.com>
+[Ryuki](https://github.com/ryukiyomizuu)
+
+## Hardware and protocol reference
+
+- [AIC Pico by whowechina](https://github.com/whowechina/aic_pico)
 

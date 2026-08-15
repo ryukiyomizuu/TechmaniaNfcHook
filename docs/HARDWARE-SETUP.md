@@ -18,9 +18,11 @@ Supported card reports:
 - report ID `2`: MIFARE Ultralight / NTAG identity
 - all-zero identity: card removed
 
-Configure and verify the board with the upstream AIC Pico configurator and
-firmware documentation. After configuration, close any application that holds
-the CardIO HID interface and run `TechmaniaNfcProbe.exe --seconds 30`.
+Configure and verify the board with the upstream
+[AIC Pico project](https://github.com/whowechina/aic_pico) and its
+[Configurator](https://whowechina.github.io/aic_pico/Configurator/index.html).
+After configuration, close any application that holds the CardIO HID interface
+and run `TechmaniaNfcProbe.exe --seconds 30`.
 
 The DLL does not speak the serial AIME protocol and does not depend on COM port
 numbers. Reassigning the CLI/AIME COM numbers therefore does not affect it.
