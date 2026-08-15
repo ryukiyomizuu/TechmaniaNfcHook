@@ -1,0 +1,7 @@
+.worktrees/
+build/
+artifacts/
+.vs/
+out/
+*.user
+*.suo
